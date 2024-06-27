@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgis/postgis:latest
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=database
+    volumes:
+      - 'polls_pg_data:/projects/postgresql'
+
+
+volumes: 
+  polls_pg_data:
